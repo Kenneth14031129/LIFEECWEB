@@ -1,0 +1,132 @@
+/* Form container styling */
+.basic-info-form {
+  margin: 30px auto;
+  padding: 50px;
+  max-width: 850px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Form title (Resident Basic Information) with navy blue gradient */
+.basic-info-form .MuiTypography-h4 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #001f3f, #004080); /* Navy blue gradient */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle below the main title */
+.basic-info-form .MuiTypography-body1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Grid container for form fields */
+.MuiGrid-container {
+  margin-top: 20px;
+}
+
+/* Field spacing and margin */
+.MuiTextField-root {
+  margin-bottom: 20px;
+}
+
+/* Remove default field border, enhance appearance */
+.MuiTextField-root input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 12px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+/* Field label positioning and styling */
+.MuiTextField-root label {
+  transform: translate(14px, 14px) scale(1);
+  padding: 0;
+  font-size: 14px;
+}
+
+/* Label floating behavior */
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+  transform: translate(14px, -6px) scale(0.75); /* Shrink label when typing */
+}
+
+/* Input focus state */
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #007acc; /* Focused border color */
+}
+
+/* Emergency contact section title with navy blue gradient */
+.basic-info-form .emergency-section {
+  margin-top: 40px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #001f3f, #004080); /* Navy blue gradient */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left; /* Align the text to the left to differentiate */
+}
+
+/* Submit button styling with navy blue gradient */
+.MuiButton-containedPrimary {
+  background: linear-gradient(45deg, #001f3f, #004080); /* Navy blue gradient */
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 30px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  color: white; /* Text color set to white */
+  font-weight: bold; /* Bold text */
+}
+
+/* Hover effect for the submit button */
+.MuiButton-containedPrimary:hover {
+  background: linear-gradient(45deg, #001a35, #003366); /* Darker navy blue gradient on hover */
+  box-shadow: 0 8px 20px rgba(0, 64, 128, 0.3); /* Shadow on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .basic-info-form {
+    padding: 20px;
+  }
+
+  .MuiTypography-h4 {
+    font-size: 1.5rem;
+  }
+
+  .MuiButton-containedPrimary {
+    font-size: 16px;
+  }
+}
+
+/* Fix potential field overlapping issues */
+.MuiTextField-root input::placeholder {
+  color: transparent; /* Ensures placeholders don't overlap with input */
+}
+
+.MuiTextField-root input:focus::placeholder {
+  color: #bbb; /* Placeholder appears only when field is active */
+}
+
+/* Input field padding and background */
+.MuiInputBase-root {
+  background-color: #fff;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease-in-out;
+}
+
+.MuiInputBase-root:hover,
+.MuiInputBase-root:focus {
+  border-color: #007acc;
+}
+

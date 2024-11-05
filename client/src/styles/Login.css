@@ -1,0 +1,213 @@
+.login-main {
+  display: flex;
+  height: 100vh;
+}
+
+.login-left {
+  flex: 1.2;
+  background-color: #313638;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.login-right {
+  flex: 1;
+  background: linear-gradient(to right, #00223E, #0A3D62);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-right-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-logo {
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+.login-logo img {
+  width: 50px;
+}
+
+.login-center {
+  text-align: center;
+}
+
+.login-center h2 {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.login-center p {
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  border: 1px solid #007acc;
+  box-shadow: 0 0 8px rgba(0, 122, 204, 0.4);
+}
+
+.pass-input-div {
+  position: relative;
+}
+
+.pass-input-div svg {
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 35px;
+  cursor: pointer;
+  outline: none;
+}
+
+form button[type="submit"] {
+  width: 100%;
+  padding: 16px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 1s linear, color 0.5s linear;
+}
+
+.login-center-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-div {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.remember-div label {
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.forgot-pass-link {
+  text-decoration: none;
+  font-size: 13px;
+  color: #007acc;
+}
+
+.forgot-pass-link:hover {
+  text-decoration: underline;
+  color: #005f99;
+}
+
+.login-center-buttons {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.login-center-buttons button:nth-child(1) {
+  background: black;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.login-center-buttons button:nth-child(1):hover {
+  background-color: #333;
+}
+
+.login-center-buttons button:nth-child(2) {
+  background: #030303;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.login-center-buttons button:nth-child(2):hover {
+  background: #cfcfcf;
+}
+
+.login-center-buttons button:nth-child(2) img {
+  width: 30px;
+}
+
+.login-bottom-p {
+  text-align: center;
+  font-size: 16px;
+}
+
+.login-bottom-p a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #007acc;
+}
+
+.login-bottom-p a:hover {
+  text-decoration: underline;
+  color: #005f99;
+}
+
+/* Toast Notification Customization */
+.Toastify__toast-container {
+  z-index: 9999 !important;
+}
+
+.Toastify__toast {
+  background-color: #0e1a2b !important;
+  color: white !important;
+  max-width: 350px; /* Increased width to prevent wrapping */
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.Toastify__toast-body {
+  font-size: 16px;
+  padding-right: 10px;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.Toastify__close-button {
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  color: white !important;
+}

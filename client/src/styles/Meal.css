@@ -1,0 +1,84 @@
+/* Meal form container styling */
+.meal-form {
+  margin: 30px auto;
+  padding: 50px;
+  max-width: 850px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Form title with navy blue gradient */
+.meal-form .MuiTypography-h4 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #001f3f, #004080);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.meal-form .MuiTypography-body1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Section titles with navy blue gradient */
+.meal-form .MuiTypography-h6 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #001f3f, #004080);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+/* Form field styles */
+.MuiTextField-root, .MuiFormControl-root {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Date field styling */
+.MuiTextField-date {
+  margin-bottom: 20px;
+}
+
+/* Submit button styling */
+.MuiButton-containedPrimary {
+  background: linear-gradient(45deg, #001f3f, #004080);
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 30px;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+/* Hover effect for submit button */
+.MuiButton-containedPrimary:hover {
+  background: linear-gradient(45deg, #004080, #0066cc);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .meal-form {
+    padding: 20px;
+  }
+
+  .meal-form .MuiTypography-h4 {
+    font-size: 1.8rem;
+  }
+
+  .meal-form .MuiTypography-h6 {
+    font-size: 1.3rem;
+  }
+
+  .MuiButton-containedPrimary {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
