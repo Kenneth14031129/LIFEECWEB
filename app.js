@@ -16,15 +16,21 @@ const userRouter = require("./routes/user");
 const messageRouter = require("./routes/message");
 const authRoute = require("./routes/auth");
 
-const User = require("./models/User"); // Import User model
+const User = require("./models/User");
 const bcrypt = require("bcryptjs");
 
-// Enable CORS to allow requests from the frontend
+// Updated CORS configuration
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: ['http://localhost:5173', 'https://your-frontend-domain.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }));
+
+// Root route
+app.get('/', (req, res) => {
+    res.json({ message: 'Welcome to LIFEEC API' });
+});
 
 // Middleware to parse incoming JSON requests
 app.use(express.json());
@@ -40,6 +46,17 @@ app.use("/api/v1/meal", mealRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/messages", messageRouter);
 app.use("/api/v1/auth", authRoute);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: 'Something went wrong!' });
+});
+
+// 404 handler for undefined routes
+app.use((req, res) => {
+    res.status(404).json({ message: 'Route not found' });
+});
 
 const port = process.env.PORT || 3000;
 
