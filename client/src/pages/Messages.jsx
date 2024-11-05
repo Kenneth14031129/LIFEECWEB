@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Header from "../components/Header.jsx";
-import AuthService from "../services/authService";
+import AuthService from "../services/AuthService";
 import "../styles/Messages.css";
 
 // Utility function to generate a color based on the first letter of the contact's name
