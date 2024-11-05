@@ -4,6 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "build": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node seeders/userSeeder.js"
   },
@@ -28,5 +31,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
