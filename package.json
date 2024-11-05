@@ -5,9 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "cd client && npm install && npm run build",
     "dev": "nodemon app.js",
-    "seed": "node seeders/userSeeder.js"
+    "build": "npm install"
   },
   "author": "Kuzma02",
   "license": "ISC",
