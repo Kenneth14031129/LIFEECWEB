@@ -5,9 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "build": "cd client && npm install && npm run build",
     "dev": "nodemon app.js",
-    "build": "npm install",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node seeders/userSeeder.js"
   },
   "author": "Kuzma02",
@@ -31,8 +30,5 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
-  },
-  "engines": {
-    "node": ">=14.0.0"
   }
 }

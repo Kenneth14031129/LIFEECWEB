@@ -3,6 +3,7 @@ require('express-async-errors');
 const connectDB = require("./db/connect");
 const express = require("express");
 const cors = require('cors');
+const path = require('path');
 const app = express();
 
 const mainRouter = require("./routes/user"); 
@@ -16,17 +17,18 @@ const userRouter = require("./routes/user");
 const messageRouter = require("./routes/message");
 const authRoute = require("./routes/auth");
 
-const User = require("./models/User"); // Import User model
+const User = require("./models/User");
 const bcrypt = require("bcryptjs");
 
-// Enable CORS to allow requests from the frontend
+// Enable CORS with updated configuration
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: ['http://localhost:5173', 'https://lifeec.onrender.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }));
 
-// Middleware to parse incoming JSON requests
+// Middleware
 app.use(express.json());
 
 // Routes
@@ -41,9 +43,28 @@ app.use("/api/v1/user", userRouter);
 app.use("/api/v1/messages", messageRouter);
 app.use("/api/v1/auth", authRoute);
 
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'client/dist')));
+    
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
+    });
+}
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({
+        status: 'error',
+        message: 'Something went wrong!',
+        error: process.env.NODE_ENV === 'development' ? err.message : {}
+    });
+});
+
 const port = process.env.PORT || 3000;
 
-// Seeder function to add Owner and Admin users
+// Seeder function
 const seedUsers = async () => {
     try {
         // Clear existing users if needed
@@ -90,12 +111,14 @@ const start = async () => {
             console.log("Seeding completed.");
             process.exit(); // Exit after seeding
         } else {
-            app.listen(port, () => {
+            app.listen(port, '0.0.0.0', () => {
                 console.log(`Server is listening on port ${port}`);
+                console.log(`Environment: ${process.env.NODE_ENV}`);
             });
         }
     } catch (error) {
         console.log(error);
+        process.exit(1);
     }
 };
 
